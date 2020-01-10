@@ -15,9 +15,8 @@ def do_pack():
             local("mkdir versions")
 
         date = datetime.now()
-        date = dat.strftime("%Y%m%d%H%M%S")
+        date = date.strftime("%Y%m%d%H%M%S")
         comstr = "versions/web_static_{}.tgz".format(date)
-
         local("tar -cvzf {} web_static".format(comstr))
         return comstr
 
