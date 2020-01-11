@@ -27,6 +27,7 @@ def do_pack():
     except:
         return None
 
+
 def do_deploy(archive_path):
     """ Do deploy """
     if not os.path.exists(archive_path):
@@ -49,6 +50,7 @@ def do_deploy(archive_path):
 
     except:
         return False
+
 
 def deploy():
     path = do_pack()
