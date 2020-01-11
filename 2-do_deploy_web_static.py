@@ -19,15 +19,15 @@ def do_deploy(archive_path):
         file_name = os.path.basename(archive_path)
         filename = file_name.split(".")
         web_name = filename[0]
-        dire = "/data/web_static/releases/"
+        dire_file = "/data/web_static/releases/{}/".format(web_name)
         put(archive_path, '/tmp/')
-        run("mkdir -p {}{}/".format(dire, web_name))
-        run("tar -xzf /tmp/{} -C {}{}/".format(file_name, dire, web_name))
+        run("mkdir -p {}{}/".format(dire_file))
+        run("tar -xzf /tmp/{} -C {}{}/".format(file_name, dire_file))
         run("rm /tmp/{}".format(file_name))
-        run("mv {}{}/web_static/* {}{}/".format(dire, web_name, dire, web_name))
+        run("mv {}{}/web_static/* {}{}/".format(dire_file, dire_file))
         run("rm -rf {}{}web_static".format(dire, web_name))
         run("rm -rf /data/web_static/current")
-        run("ln -s {}{}/ /data/web_static/current".format(dire, web_name))
+        run("ln -s {}{}/ /data/web_static/current".format(dire_file))
         print("New version deployed!")
         return True
 
