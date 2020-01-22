@@ -25,7 +25,7 @@ def d_text(text):
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python_text(text='is cool'):
+def python_text(text='is_cool'):
     """route that display python + text"""
     text = text.raplace('_', ' ')
     return ("Python " + text)
