@@ -6,10 +6,13 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_HBNB():
-    """funtion whit route"""
+    """route / that display Hello HBNB"""
     return ("Hello HBNB!")
+
+
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """funtion whit route that display HBNB"""
+    """route /hbnb that display HBNB"""
     return ("HBNB")
 
 if __name__ == "__main__":
