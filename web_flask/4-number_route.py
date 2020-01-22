@@ -34,7 +34,7 @@ def python_text(text='is cool'):
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
     """route that siplay n if is an integer"""
-        return (str(n) + "is a number")
+        return (str(n) + " is a number")
 
 
 if __name__ == "__main__":
