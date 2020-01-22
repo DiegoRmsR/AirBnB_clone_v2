@@ -18,9 +18,10 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def d_text(text):
-    """route /c/<text> that display C + text"""
+    """route /c/<text> that display C + text
+    """
     text = text.replace('_', ' ')
-    return ("C " + text)
+    return "C " + text
 
     
 if __name__ == "__main__":
